@@ -3,16 +3,16 @@ import json
 import tqdm
 
 def main(): 
-    with open("/Users/elizabethschwartz/Desktop/testing_at_cl.py/data/twin_citiees_nonprofit_presses_metadata.json") as json_file:
+    with open("metadata.json") as json_file:
         collection_metadata = json.load(json_file)["gathers"]
     collection_metadata = in_twin_cities(if_501c3(analyzes_vol_metadata(collection_metadata)))
-    writes_report(collection_metadata, "/Users/elizabethschwartz/Documents/nonprofit press project/htrc/report.txt")
+    writes_report(collection_metadata, "report.txt")
     the_results = []
     for item in collection_metadata:
         for entry in collection_metadata[item]:
             the_results.append(entry)
     print(len(the_results))
-    makes_results_json(the_results, "/Users/elizabethschwartz/Documents/nonprofit press project/htrc/suplemented_collection_metadata.json")
+    makes_results_json(the_results, "suplemented_collection_metadata.json")
     
 
 def writes_report(metadata, outfile): 
