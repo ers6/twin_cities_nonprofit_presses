@@ -12,13 +12,13 @@ def main():
             print(f)
             file_name = f.split('/')[1]
             infile_name = str(f)+"/"+file_name +".txt"
+#             enter your search terms here -- returns lines with any of the terms provided in the list
             search_terms = ["nonprofit"]
             these_results.append(line_level_concordance_search(infile_name, search_terms))
-    print(these_results)
-    makes_results_csv(these_results, "results_refac.csv")
+    makes_results_csv(these_results, "results.csv")
 
 
-# deprecated version of gets funding data that returns results as a list of strings instead of a massive string
+
 #this version allows for multiple search terms (copyright, donors, foundation, etc.)
 def line_level_concordance_search(infile_name, search_term):
     try:
@@ -35,7 +35,7 @@ def line_level_concordance_search(infile_name, search_term):
             i += 1
         print(hits)
         for hit in hits:
-            print(lines[(hit - 5):(hit + 20)])
+#             adjust the amount of text scraped surrounding the result by changing the lines list index below
             result = (lines[(hit - 5):(hit + 20)])
             results_string = ""
             for item in result:
@@ -47,37 +47,6 @@ def line_level_concordance_search(infile_name, search_term):
         return rows
     except FileNotFoundError:
         pass
-
-
-# def gets_funding_data(infile_name, search_term):
-#     try:
-#         infile = open(infile_name, 'r')
-#         print('howdy')
-#         lines = infile.read().splitlines()
-#         i = 0
-#         hits = []
-#         results = []
-#         for line in lines:
-#             if search_term.lower() in line.lower():
-#                 print('found in line:', i, line)
-#                 hits.append(i)
-#                 i += 1
-#         print(hits)
-#         for hit in hits:
-#             print(lines[(hit - 10):(hit + 10)])
-#             result = (lines[(hit - 5):(hit + 5)])
-#             result_string = ""
-#             for item in result:
-#                 result_string = result_string + " " + item
-#             result_string = re.sub("\\\\", "", result_string)
-#             htid = infile_name.split("/")[1]
-#             results.append({'volume': htid, 'line' : hit, 'text':result_string})
-#             headers = ['volume','line', 'text']
-#             rows = results
-#             return rows
-#     except FileNotFoundError:
-#         print(infile_name, "could not be found")
-
 
 
 def makes_results_csv(results, outfile_name):
