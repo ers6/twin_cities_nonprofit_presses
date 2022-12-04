@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 def main():
     nlp = spacy.blank("en")
-    the_results = csv_to_dict("/Users/elizabethschwartz/Documents/nonprofit press project/named_entity_experiments/data/training_entities.csv")
+    the_results = csv_to_dict("training_entities.csv")
     list_training_ents = []
     donor_lists = []
     for result in the_results:
