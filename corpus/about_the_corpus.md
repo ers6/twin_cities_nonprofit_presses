@@ -5,8 +5,9 @@ The corpus contains 1137 volumes published by 4 501c3 nonprofit book publishers 
 
 # What's in this directory?
 
- - **analyze_corpus.py** is a python program that supplements the hathitrust metadata records with: 
+ - **analyze_corpus.py** is a python program that removes any volumes incorrectly included and supplements the hathitrust metadata records with: 
 	 - the address of the press at the time of publication as a string, 
 	 - the 501c3 status of the press as a boolean (True = 501c3, False = not 501c3), 
 	 - and whether or not the press was in the Twin Cities at the time of publication as a boolean (True = in Twin Cities, false= not in Twin Cities)
 - **supplemented_collection_metadata.json** is the json file **analyze_corpus.py** creates with the added metadata fields. 
+- **report.txt** is the txt file **analyze_corpus.py** creates. It contains information about how many of the books were published when the presses were in the Twin Cities and when they were 501c3 nonprofits.
