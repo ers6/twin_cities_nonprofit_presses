@@ -4,8 +4,8 @@ import spacy
 import tqdm
 
 def main():
-    nlp = spacy.load("/Users/elizabethschwartz/Desktop/content/model-best")
-    results = csv_to_dict("/Users/elizabethschwartz/Documents/nonprofit press project/named_entity_experiments/data/full_results.csv")
+    nlp = spacy.load("/content/model-best")
+    results = csv_to_dict("full_results.csv")
     for entry in tqdm.tqdm(results):
         donor_list = []
         doc = nlp(entry['text'])
