@@ -26,6 +26,7 @@ After I decided to use spaCy, I created the model and ran the rest of my 960 res
 - "dayton hudson foundation" = "dayton hudson foun"
 - "dayton hudson foundation" != "dayton hudson for target stores" 
 - "national endowment for arts challenge grant" != "national endowmment for art"
+
 While the latter 2 examples likely have the same parent organization funding source, I did not want to make interpretive decisions at this point. I am exclusively concerned with consolidating the names of entities into authority names for analysis of the actual names as they are represented in the donor lists. 
 
 # What's in this directory?
