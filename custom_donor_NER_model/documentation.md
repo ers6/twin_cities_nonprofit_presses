@@ -30,4 +30,6 @@ After I decided to use spaCy, I created the model and ran the rest of my 960 res
 While the latter 2 examples likely have the same parent organization funding source, I did not want to make interpretive decisions at this point. I am exclusively concerned with consolidating the names of entities into authority names for analysis of the actual names as they are represented in the donor lists. 
 
 # What's in this directory?
-
+## python scripts: 
+- **build_ner_model.py** builds the custom NER model (based on pyDH notebook:)
+- **makes_donor_lists.py** runs the custom NER model over the scraped data
