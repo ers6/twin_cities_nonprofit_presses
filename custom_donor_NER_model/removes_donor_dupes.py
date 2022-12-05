@@ -1,7 +1,10 @@
 from makes_donor_lists import csv_to_dict, makes_results_csv
 import ast
 import re
-def main():
+# open_refine_prep() removes characters from entities in preparation for open refine processing 
+# consolidates_names() creates the authority names key csv file 
+
+def open_refine_prep():
     results= csv_to_dict("/Users/elizabethschwartz/Documents/nonprofit press project/htrc/named_entity_experiments/donor_list_results.csv")
     donor_ent_list = []
     for result in results:
@@ -22,8 +25,7 @@ def main():
 
     makes_results_csv(donor_ent_list, 'reduced_name_results.csv')
 
-    # print(donor_ent_list)
-    # print(deduped_list)
+  
     print(len(donor_ent_list))
     print(len(deduped_list))
 
