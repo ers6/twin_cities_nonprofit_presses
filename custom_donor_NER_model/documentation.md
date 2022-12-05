@@ -34,10 +34,11 @@ While the latter 2 examples likely have the same parent organization funding sou
 - **build_ner_model.py** builds the custom NER model (based on Dr. W.J.B. Mattingly's pyDH notebook: https://ner.pythonhumanities.com/03_01_create_ner_training_set.html)
 - **makes_donor_lists.py** runs the custom NER model over the scraped data
 - **or_pre_and_post_cleaning.py** contains two scripts. The first prepares the output of **makes_donor_lists.py** for open refine. The second creates a key of authority names and alternative names 
+- **normalizes_donor_names.py** matches the donor name entities to authority names using the authority name csv file 
 
 ## csv files: 
 - **training_ents.csv** contains the training entities inputted into **build_ner_model.py**
 - **deduped_donor_names_2022-11-23_11-55AM.csv** outfile from open refine cleaning
-- **authority_name_variants_key** output of postprocessing open refine data
+- **authority_name_key** output of postprocessing open refine data
 ## external documentation:
 - **onotonotes_release_notes_5.pdf** are the OntoNotes release notes
